@@ -91,6 +91,7 @@ def place_marker(Board, position, marker, player=None):
     Board[position] = marker
     commons.display_board(Board)
     # Check for winner
+    check_winner(player)
 
 def check_winner(player):
     # Horizontal wins
@@ -114,6 +115,20 @@ def check_winner(player):
             Board[2] == Board[5] == Board[8]
             ) or (
                 Board[3] == Board[6] == Board[9]):
+        # If user wins
+        if player:
+            print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))
+            print(Style.RESET_ALL)
+        else:
+            print(Fore.BLUE + emoji.emojize('\nOh no! You lost :pensive_face:'))
+            print('The computer wins')
+            print(Style.RESET_ALL)
+        # Replay
+    # Diagonal wins
+    elif (
+        Board[1] == Board[5] == Board[9]
+        ) or (
+            Board[3] == Board[5] == Board[7]):
         # If user wins
         if player:
             print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))
