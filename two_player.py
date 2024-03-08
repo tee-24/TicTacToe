@@ -83,6 +83,7 @@ def player1_choice(player1_marker, player1):
         elif Board[position] in ['X', 'O']:
             print('That spot has been taken, please choose another number')
     # Place marker on the board
+    place_marker(Board, position, player1_marker)
 
     return position 
 
@@ -104,5 +105,15 @@ def player2_choice(player2_marker, player2):
             print('That spot has been taken, please choose another number')
 
     # Place marker on the board
+    place_marker(Board, position, player2_marker)
 
     return position 
+
+def place_marker(Board, position, marker):
+    """
+    Place the marker on the board 
+    and display the board
+    """
+    Board[position] = marker
+    commons.display_board(Board)
+    # Check for winner
