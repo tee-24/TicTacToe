@@ -1,4 +1,5 @@
-import commons
+import common_functions
+import one_player
 
 def run_game():
     # Intro
@@ -6,15 +7,18 @@ def run_game():
     # Instructions
     print('Instructions:')
     print('First to get 3 in a row wins!')
-    # Empty line
+    # Blank line
     print()
     # Get number of players
     player_number = common_functions.get_num_of_players()
 
     if player_number == 1:
         # Start one player game
-        pass
+        one_player.get_user_name()
+        one_player.one_player_game()
     else:
         # Start two player game
         pass
-   
+
+
+run_game()

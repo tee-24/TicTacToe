@@ -79,7 +79,7 @@ def computer_choice(computer_marker):
     while choice not in board or board[choice] in ['X', 'O']:
         choice = random.randint(1,9)
     # Place marker on the board
-    place_marker(board, position, user_marker, player=False)
+    place_marker(board, choice, computer_marker, player=False)
 
     return choice 
 
@@ -180,9 +180,9 @@ def one_player_game():
     else:
         computer_marker = 'X'
     # Reset the board
-    commons.reset_board(board) 
+    common_functions.reset_board(board) 
     # Display the board
-    commons.display_board(board)
+    common_functions.display_board(board)
     # Start game
     while play_game == True:
         # Blank line
