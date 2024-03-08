@@ -1,3 +1,5 @@
+from colorama import Fore, Back, Style
+
 # Global variables
 board = {
     1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"
@@ -15,13 +17,13 @@ def get_num_of_players():
         try:
             answer = int(input("1 or 2 players? "))
         except ValueError:
-            print("\nInvalid choice, please choose 1 or 2")
-
+            print(Fore.RED + "\nInvalid choice, please choose 1 or 2")
+            print(Style.RESET_ALL)
             continue
 
         if answer not in [1, 2]:
-            print("\nInvalid choice, please choose 1 or 2")
-
+            print(Fore.RED + "\nInvalid choice, please choose 1 or 2")
+            print(Style.RESET_ALL)
     return answer
 
 
