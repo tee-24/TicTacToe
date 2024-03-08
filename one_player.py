@@ -22,3 +22,17 @@ def get_user_name():
 
     print(f'\nHi {player}!')
     return player
+
+def get_user_marker():
+    """
+    Get the markers for Player 1 and Player 2
+    """
+    choice = ''
+
+    while choice not in ['X','O']:
+        choice = input('Would you like to be X or O? ').upper()
+
+        if choice not in ['X','O']:
+            print('Invalid choice, please choose X or O')
+
+    return choice
