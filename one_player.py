@@ -138,3 +138,7 @@ def check_winner(player):
             print('The computer wins')
             print(Style.RESET_ALL)
         # Replay
+    # Check for tie
+    elif common_functions.check_tie(board):
+        print("It's a tie!")
+        # Replay
