@@ -3,6 +3,7 @@ import random
 
 # Global variables
 board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+play_game = True
 
 def get_user_name():
     """
@@ -165,3 +166,30 @@ def play_again():
     else:
         print('\nThanks for playing!\n')
         exit()
+
+def one_player_game():
+    """
+    Play the game in single player mode,
+    the computer will be the other player
+    """
+    # Get the user's marker
+    user_marker = get_user_marker()
+    # Determine computer marker based on user's marker
+    if user_marker == 'X':
+        computer_marker = 'O'
+    else:
+        computer_marker = 'X'
+    # Reset the board
+    commons.reset_board(board) 
+    # Display the board
+    commons.display_board(board)
+    # Start game
+    while play_game == True:
+        # Blank line
+        print()
+        # Where the user wants to play
+        player_choice(user_marker)
+        # Where the computer wants to play
+        computer_choice(computer_marker)
+        
+        
