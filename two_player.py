@@ -41,3 +41,25 @@ def get_player2_name():
 
     return player2
 
+def get_player1_marker(player1, player2):
+    """
+    Get the marker for Player 1
+    """
+
+    choice = ''
+
+    while choice not in ['X','O']:
+        choice = input(f'\n{player1}, would you like to be X or O? ').upper()
+
+        if choice not in ['X','O']:
+            print('Invalid choice, please choose X or O')
+
+    if choice == 'X':
+        print(f'{player1} is X')           
+        print(f'{player2} is O')
+    else:
+        print(f'{player1} is O')
+        print(f'{player2} is X')
+
+    return choice
+
