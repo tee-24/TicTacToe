@@ -63,3 +63,26 @@ def get_player1_marker(player1, player2):
 
     return choice
 
+def player1_choice(player1_marker, player1):
+    """
+    Get Player 1 position 
+    and place it on the board
+    """
+    position = ''
+
+    while position not in Board or Board[position] in ['X', 'O']:
+        try:
+            position = int(input(f'Where would you like to play {player1}? '))
+        except ValueError:
+            print('Invalid choice, please choose a number from 1-9')
+            continue
+
+        if position not in Board:
+            print('Invalid choice, please choose a number from 1-9')
+
+        elif Board[position] in ['X', 'O']:
+            print('That spot has been taken, please choose another number')
+    # Place marker on the board
+
+    return position 
+
