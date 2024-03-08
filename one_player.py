@@ -59,3 +59,20 @@ def player_choice(user_marker):
     # Place marker on the board
 
     return position
+
+
+def computer_choice(computer_marker):
+    """
+    Get computer's position
+    and place on the oard
+    """
+
+    print("\nComputer's turn...\n")
+
+    choice = 0
+
+    while choice not in Board or Board[choice] in ['X', 'O']:
+        choice = random.randint(1,9)
+    # Place marker on the board
+
+    return choice 
