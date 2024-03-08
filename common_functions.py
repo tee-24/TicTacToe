@@ -1,5 +1,5 @@
 # Global variables
-Board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
 
 def get_num_of_players():
@@ -22,10 +22,10 @@ def get_num_of_players():
     
     return answer
 
-def display_board(Board):
+def display_board(board):
     """
     Print out the game board
     """
-    print(f' {Board[1]} | {Board[2]} | {Board[3]}')
-    print(f' {Board[4]} | {Board[5]} | {Board[6]}')
-    print(f' {Board[7]} | {Board[8]} | {Board[9]}')
+    print(f' {board[1]} | {board[2]} | {board[3]}')
+    print(f' {board[4]} | {board[5]} | {board[6]}')
+    print(f' {board[7]} | {board[8]} | {board[9]}')

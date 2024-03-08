@@ -1,8 +1,8 @@
-import commons
+import common_functions
 import random
 
 # Global variables
-Board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
 def get_user_name():
     """
@@ -47,20 +47,20 @@ def player_choice(user_marker):
     """
     position = ''
 
-    while position not in Board or Board[position] in ['X', 'O']:
+    while position not in board or board[position] in ['X', 'O']:
         try:
             position = int(input('Where would you like to play? '))
         except ValueError:
             print('\nInvalid choice, please choose a number from 1-9')
             continue
 
-        if position not in Board:
+        if position not in board:
             print('\nInvalid choice, please choose a number from 1-9')
 
-        elif Board[position] in ['X', 'O']:
+        elif board[position] in ['X', 'O']:
             print('\nThat spot has been taken, please choose another number')
     # Place marker on the board
-    place_marker(Board, position, user_marker, player=True)
+    place_marker(board, position, user_marker, player=True)
 
     return position
 
@@ -75,32 +75,32 @@ def computer_choice(computer_marker):
 
     choice = 0
 
-    while choice not in Board or Board[choice] in ['X', 'O']:
+    while choice not in board or board[choice] in ['X', 'O']:
         choice = random.randint(1,9)
     # Place marker on the board
-    place_marker(Board, position, user_marker, player=False)
+    place_marker(board, position, user_marker, player=False)
 
     return choice 
 
 
-def place_marker(Board, position, marker, player=None):
+def place_marker(board, position, marker, player=None):
     """
     Place the marker on the board 
     and display the board
     """
-    Board[position] = marker
-    commons.display_board(Board)
+    board[position] = marker
+    common_functions.display_board(board)
     # Check for winner
     check_winner(player)
 
 def check_winner(player):
     # Horizontal wins
     if (
-        Board[1] == Board[2] == Board[3]
+        board[1] == board[2] == board[3]
         ) or (
-            Board[4] == Board[5] == Board[6]
+            board[4] == board[5] == board[6]
             ) or (
-                Board[7] == Board[8] == Board[9]):
+                board[7] == board[8] == board[9]):
         # If user wins
         if player:
             print('\nCongrats, you won! :party_popper:')
@@ -110,11 +110,11 @@ def check_winner(player):
         # Replay
     # Vertical wins
     elif (
-        Board[1] == Board[4] == Board[7]
+        board[1] == board[4] == board[7]
         ) or (
-            Board[2] == Board[5] == Board[8]
+            board[2] == board[5] == board[8]
             ) or (
-                Board[3] == Board[6] == Board[9]):
+                board[3] == board[6] == board[9]):
         # If user wins
         if player:
             print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))
@@ -126,9 +126,9 @@ def check_winner(player):
         # Replay
     # Diagonal wins
     elif (
-        Board[1] == Board[5] == Board[9]
+        board[1] == board[5] == board[9]
         ) or (
-            Board[3] == Board[5] == Board[7]):
+            board[3] == board[5] == board[7]):
         # If user wins
         if player:
             print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))

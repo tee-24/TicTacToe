@@ -9,7 +9,7 @@ def run_game():
     # Empty line
     print()
     # Get number of players
-    player_number = commons.get_num_of_players()
+    player_number = common_functions.get_num_of_players()
 
     if player_number == 1:
         # Start one player game
