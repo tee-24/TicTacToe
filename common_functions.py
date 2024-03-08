@@ -40,3 +40,10 @@ def check_tie(board):
         if board[key].isdigit():
             return False
     return True
+
+def reset_board(board):
+    """
+    Resets the board to default
+    """
+    for spot in range(1,10):
+        board[spot] = str(spot)
