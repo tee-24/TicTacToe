@@ -1,3 +1,6 @@
+import commons
+import random
+
 # Global variables
 Board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
@@ -57,6 +60,7 @@ def player_choice(user_marker):
         elif Board[position] in ['X', 'O']:
             print('\nThat spot has been taken, please choose another number')
     # Place marker on the board
+    place_marker(Board, position, user_marker, player=True)
 
     return position
 
@@ -74,5 +78,16 @@ def computer_choice(computer_marker):
     while choice not in Board or Board[choice] in ['X', 'O']:
         choice = random.randint(1,9)
     # Place marker on the board
+    place_marker(Board, position, user_marker
 
     return choice 
+
+
+def place_marker(Board, position, marker):
+    """
+    Place the marker on the board 
+    and display the board
+    """
+    Board[position] = marker
+    commons.display_board(Board)
+    # Check for winner
