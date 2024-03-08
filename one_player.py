@@ -107,3 +107,19 @@ def check_winner(player):
             print('\nOh no! You lost :pensive_face:')
             print('The computer wins')
         # Replay
+    # Vertical wins
+    elif (
+        Board[1] == Board[4] == Board[7]
+        ) or (
+            Board[2] == Board[5] == Board[8]
+            ) or (
+                Board[3] == Board[6] == Board[9]):
+        # If user wins
+        if player:
+            print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))
+            print(Style.RESET_ALL)
+        else:
+            print(Fore.BLUE + emoji.emojize('\nOh no! You lost :pensive_face:'))
+            print('The computer wins')
+            print(Style.RESET_ALL)
+        # Replay
