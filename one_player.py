@@ -78,12 +78,12 @@ def computer_choice(computer_marker):
     while choice not in Board or Board[choice] in ['X', 'O']:
         choice = random.randint(1,9)
     # Place marker on the board
-    place_marker(Board, position, user_marker
+    place_marker(Board, position, user_marker, player=False)
 
     return choice 
 
 
-def place_marker(Board, position, marker):
+def place_marker(Board, position, marker, player=None):
     """
     Place the marker on the board 
     and display the board
@@ -91,3 +91,19 @@ def place_marker(Board, position, marker):
     Board[position] = marker
     commons.display_board(Board)
     # Check for winner
+
+def check_winner(player):
+    # Horizontal wins
+    if (
+        Board[1] == Board[2] == Board[3]
+        ) or (
+            Board[4] == Board[5] == Board[6]
+            ) or (
+                Board[7] == Board[8] == Board[9]):
+        # If user wins
+        if player:
+            print('\nCongrats, you won! :party_popper:')
+        else:
+            print('\nOh no! You lost :pensive_face:')
+            print('The computer wins')
+        # Replay
