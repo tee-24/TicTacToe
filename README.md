@@ -34,6 +34,35 @@ You can view the live site here - [Tic-Tac-Toe](https://tic-tac-toe--game-104c3a
 * In the two player game, the message is printed in green when Player 1 or Player 2 wins
 * When there is a tie, the message is printed in yellow
 
+# Features
+The game is composed of 2 different modes, one for a single player and one for two players. In both modes, the user(s) will be asked for their name, what marker they want to play with, where they want to place the  marker, and if they would like to play again.
+
+* Introduction - This will print out an introduction to the game
+![intro](docs/intro.png)
+
+* Instructions - This will print out the game instructions
+![instructions](docs/instructions.png)
+
+* Number of players - This function will allow the player(s) to decide whether they would like to play in single player mode or two player mode
+![num](docs/player-num.png)
+
+* Get name - This function will allow the player(s) to input their name(s)
+![name](docs/name.png)
+
+* Choose marker - The player will choose whether they want to play with X or O
+![marker](docs/marker.png)
+
+* Choose position - This function will place the chosen marker on the selected position
+![position](docs/position.png)
+
+* Check winner - This function will print who won or if there is a tie
+![tie](docs/tie.png)
+![win](docs/winner.png)
+
+* Play again - This function will restart the game if the player chooses yes, and end the game if the player chooses no
+![yes](docs/replay.png)
+![no](docs/replay1.png)
+
 ## Future Implementations
  I would like to develop this game using Pygame to create a more interactive and user friendly game that is responsive and can be played on various devices.
 
