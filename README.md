@@ -12,3 +12,22 @@
 * [Black](https://pypi.org/project/black/) - Used to format code
 * [PyPI](https://pypi.org/) - Used to import Colorama and Emoji packages
 *  [CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate code
+
+
+# Testing
+Testing was ongoing throughout the entire build. As this game runs on a mock terminal, it will not work on mobile devices so no accessibility or responsitivity testing was required.
+
+### Code Institute Python Linter
+Validation was done using [CI Python Linter](https://pep8ci.herokuapp.com/) 
+
+run.py
+![run](assets/docs/run.png)
+
+common_functions.py
+![common](assets/docs/common.png)
+
+one_player.py
+![oneplayer](assets/docs/oneplayer.png)
+
+two_player.py
+![twoplayer](assets/docs/twoplayer.png)
