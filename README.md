@@ -1,3 +1,19 @@
+# User Experience (UX)
+## Target Audience
+* Users that would like to play a game of tic-tac-toe
+* Users who would like to play a game of tic-tac-toe versus a computer
+* Users who would like to play a 2-player game of tic-tac-toe
+
+## User Stories
+* A user should be able to determine how to play the game
+* A user should be able to easily and intuitively navigate the game
+* A user should find it easy to know whose turn it is
+* A user should find it easy to determine the winner of the game
+
+## App Aims
+* To offer a fun game to play
+* To allow a single player to play against the computer
+* To allow two players to play against each other
 
 # Design
 ## Flowchart
