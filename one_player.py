@@ -1,6 +1,7 @@
 import common_functions
 import random
 import emoji
+from colorama import Fore, Back, Style
 
 # Global variables
 board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
@@ -13,17 +14,19 @@ def get_user_name():
     player = ''
 
     while len(player) < 3 or not player.isalpha() or len(player) > 10:
-        player = input('\nWhat is your name? ').capitalize()
-
+        player = input('What is your name? ').capitalize()
+        # If name contains anything but letters
         if player.isalpha() == False:
-            print('Name can only contain letters, please try again')
-            
+            print(Fore.RED + 'Name can only contain letters, please try again')
+            print(Style.RESET_ALL)
+        # If name is less than 3 letters
         elif len(player) < 3:
-            print('Name must be a minimum of 3 letters, please try again')
-            
+            print(Fore.RED + 'Name must be a minimum of 3 letters, please try again')
+            print(Style.RESET_ALL)
+        # If name is longer than 10 letters
         elif len(player) > 10:
-            print('Name can only be a maximum of 10 letters, please try again')
-            
+            print(Fore.RED + 'Name can only be a maximum of 10 letters, please try again')
+            print(Style.RESET_ALL)
 
     print(f'\nHi {player}!')
     return player
@@ -38,7 +41,8 @@ def get_user_marker():
         choice = input('Would you like to be X or O? ').upper()
 
         if choice not in ['X','O']:
-            print('Invalid choice, please choose X or O')
+            print(Fore.RED + 'Invalid choice, please choose X or O')
+            print(Style.RESET_ALL)
 
     return choice
 
@@ -53,14 +57,17 @@ def player_choice(user_marker):
         try:
             position = int(input('Where would you like to play? '))
         except ValueError:
-            print('\nInvalid choice, please choose a number from 1-9')
+            print(Fore.RED + '\nInvalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
             continue
 
         if position not in board:
-            print('\nInvalid choice, please choose a number from 1-9')
+            print(Fore.RED + '\nInvalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
 
         elif board[position] in ['X', 'O']:
-            print('\nThat spot has been taken, please choose another number')
+            print(Fore.BLUE + '\nThat spot has been taken, please choose another number')
+            print(Style.RESET_ALL)
     # Place marker on the board
     place_marker(board, position, user_marker, player=True)
 
@@ -105,10 +112,12 @@ def check_winner(player):
                 board[7] == board[8] == board[9]):
         # If user wins
         if player:
-            print(emoji.emojize('\nCongrats, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize('\nCongrats, you won! :party_popper:'))
+            print(Style.RESET_ALL)
         else:
-            print(emoji.emojize('\nOh no! You lost :pensive_face:'))
+            print(Fore.BLUE + emoji.emojize('\nOh no! You lost :pensive_face:'))
             print('The computer wins')
+            print(Style.RESET_ALL)
         # Replay
         play_again()
     # Vertical wins
@@ -157,15 +166,16 @@ def play_again():
 
     answer = input('Do you want to play again? ').capitalize()
     while answer not in ['Y', 'N', 'Yes', 'No']:
-        print("I'm sorry, I don't understand")
+        print(Fore.RED + "I'm sorry, I don't understand")
+        print(Style.RESET_ALL)
         answer = input('Please type Yes or No: ').capitalize()
     # If user chooses yes
     if answer in ['Y', 'Yes']:
-        print(emoji.emojize("Great, let's play again :grinning_face_with_big_eyes:!"))
+        print(emoji.emojize("\nGreat, let's play again :grinning_face_with_big_eyes:!\n"))
         one_player_game()
     # If user chooses no
     else:
-        print(emoji.emojize('\nThanks for playing! :waving_hand:\n'))
+        print(Fore.MAGENTA + emoji.emojize('\nThanks for playing! :waving_hand:\n'))
         exit()
 
 def one_player_game():
@@ -173,6 +183,7 @@ def one_player_game():
     Play the game in single player mode,
     the computer will be the other player
     """
+
     # Get the user's marker
     user_marker = get_user_marker()
     # Determine computer marker based on user's marker
@@ -182,6 +193,8 @@ def one_player_game():
         computer_marker = 'X'
     # Reset the board
     common_functions.reset_board(board) 
+    # Blank line
+    print()
     # Display the board
     common_functions.display_board(board)
     # Start game
