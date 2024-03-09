@@ -1,5 +1,6 @@
 import common_functions
 import one_player
+import two_player
 import emoji
 from colorama import Fore, Back, Style
 
@@ -22,7 +23,7 @@ def run_game():
         one_player.one_player_game()
     else:
         # Start two player game
-        pass
+        two_player.two_player_game()
 
 
 run_game()

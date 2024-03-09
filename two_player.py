@@ -1,7 +1,10 @@
 import common_functions
 
 # Global variables
-Board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
+play_game = True
+player1 = ''
+player2 = ''
 
 def get_player1_name():
     """
@@ -65,60 +68,61 @@ def get_player1_marker(player1, player2):
 
     return choice
 
-def player1_choice(player1_marker):
+def player1_choice(player1_marker, player1):
     """
     Get Player 1 position 
     and place it on the board
     """
     position = ''
 
-    while position not in Board or Board[position] in ['X', 'O']:
+    while position not in board or board[position] in ['X', 'O']:
         try:
             position = int(input(f'Where would you like to play {player1}? '))
         except ValueError:
             print('Invalid choice, please choose a number from 1-9')
             continue
 
-        if position not in Board:
+        if position not in board:
             print('Invalid choice, please choose a number from 1-9')
 
-        elif Board[position] in ['X', 'O']:
+        elif board[position] in ['X', 'O']:
             print('That spot has been taken, please choose another number')
     # Place marker on the board
-    place_marker(Board, position, player1_marker, player=True)
+    place_marker(board, position, player1_marker, player1, player2, player=True)
 
     return position 
 
-def player2_choice(player2_marker):
+def player2_choice(player2_marker, player2):
 
     position = ''
 
-    while position not in Board or Board[position] in ['X', 'O']:
+    while position not in board or board[position] in ['X', 'O']:
         try:
             position = int(input(f'Where would you like to play {player2}? '))
         except ValueError:
             print('Invalid choice, please choose a number from 1-9')
             continue
 
-        if position not in Board:
+        if position not in board:
             print('Invalid choice, please choose a number from 1-9')
 
-        elif Board[position] in ['X', 'O']:
+        elif board[position] in ['X', 'O']:
             print('That spot has been taken, please choose another number')
 
     # Place marker on the board
-    place_marker(Board, position, player2_marker, player=False)
+    place_marker(board, position, player2_marker, player1, player2, player=False)
 
     return position 
 
-def place_marker(Board, position, marker, player=None):
+def place_marker(board, position, marker, player1, player2, player=None):
     """
     Place the marker on the board 
     and display the board
     """
-    Board[position] = marker
-    common_functions.display_board(Board)
+    board[position] = marker
+    common_functions.display_board(board)
     # Check for winner
+    check_winner(player1, player2, player)
 
 def check_winner(player1, player2, player):
     
@@ -206,12 +210,15 @@ def two_player_game():
         player2_marker = 'O'
     else:
         player2_marker = 'X'
+    # Reset the board
+    common_functions.reset_board(board)
     # Blank line
     print()
     # Display board
     common_functions.display_board(board)
     # Start game
-    while play_game == True:
+    while play_game:
+        # Blank line
         print()
         # Where Player 1 wants to play
         player1_choice(player1_marker, player1)
