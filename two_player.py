@@ -166,3 +166,8 @@ def check_winner(player1, player2, player):
 
        
         # Replay
+    # Check for tie
+    elif common_functions.check_tie(board):
+        print("It's a tie!")
+        # Replay
+        
