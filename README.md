@@ -52,6 +52,19 @@ You can view the live site here - [Tic-Tac-Toe](https://tic-tac-toe--game-104c3a
 * [PyPI](https://pypi.org/) - Used to import Colorama and Emoji packages
 *  [CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate code
 
+# Deployment & Local Development
+## Deployment
+The app was deployed to Heroku via the following steps:
+1. Log in (or sign up) to Heroku
+2. Click New on the top right
+3. Choose create new app
+4.  Choose name and region and click create app
+5.  In the settings tab, click on Reveal Config Vars and add the key Port and the value 8000
+6.  Add python and nodejs buildpacks specifically in that order
+7.   In the deploy tab, choose GitHub as deployment method and connect repository
+8. In Manual deploy section, click Deploy Branch
+
+
 
 # Testing
 Testing was ongoing throughout the entire build. As this game runs on a mock terminal, it will not work on mobile devices so no accessibility or responsitivity testing was required.
