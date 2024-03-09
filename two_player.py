@@ -137,3 +137,18 @@ def check_winner(player1, player2, player):
             print(f'\nCongrats {player2}, you won!')
 
         # Replay
+    # Vertical wins
+    elif (
+        board[1] == board[4] == board[7]
+        ) or (
+            board[2] == board[5] == board[8]
+            ) or (
+                board[3] == board[6] == board[9]):
+        # If Player 1 wins
+        if player:
+            print(f'\nCongrats {player1}, you won! ')
+            
+        else:
+            print(f'\nCongrats {player2}, you won!')
+
+        # Replay
