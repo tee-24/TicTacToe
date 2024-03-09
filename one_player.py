@@ -154,7 +154,8 @@ def check_winner(player):
         play_again()
     # Check for tie
     elif common_functions.check_tie(board):
-        print("It's a tie!")
+        print(Fore.YELLOW + "It's a tie!")
+        print(Style.RESET_ALL)
         # Replay
         play_again()
 
@@ -175,7 +176,7 @@ def play_again():
         one_player_game()
     # If user chooses no
     else:
-        print(Fore.MAGENTA + emoji.emojize('\nThanks for playing! :waving_hand:\n'))
+        print(Fore.CYAN + emoji.emojize('\nThanks for playing! :waving_hand:\n'))
         exit()
 
 def one_player_game():

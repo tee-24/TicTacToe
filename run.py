@@ -5,7 +5,7 @@ from colorama import Fore, Back, Style
 
 def run_game():
     # Intro
-    print(Fore.MAGENTA + emoji.emojize('\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:'))
+    print(Fore.CYAN + emoji.emojize('\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:'))
     print(Style.RESET_ALL)
     # Instructions
     print(Fore.YELLOW + 'Instructions:')
