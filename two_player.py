@@ -193,3 +193,27 @@ def play_again():
     else:
         print('\nThanks for playing!\n')
         exit()
+
+def two_player_game():
+
+    # Get names of players
+    player1 = get_player1_name()
+    player2 = get_player2_name()
+    # Get Player 1 marker
+    player1_marker = get_player1_marker(player1, player2)
+    # Determine Player 2 marker based on Player 1 marker
+    if player1_marker == 'X':
+        player2_marker = 'O'
+    else:
+        player2_marker = 'X'
+    # Blank line
+    print()
+    # Display board
+    common_functions.display_board(board)
+    # Start game
+    while play_game == True:
+        print()
+        # Where Player 1 wants to play
+        player1_choice(player1_marker, player1)
+        # Where Player 2 wants to play
+        player2_choice(player2_marker, player2)
