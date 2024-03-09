@@ -58,13 +58,29 @@ The app was deployed to Heroku via the following steps:
 1. Log in (or sign up) to Heroku
 2. Click New on the top right
 3. Choose create new app
-4.  Choose name and region and click create app
-5.  In the settings tab, click on Reveal Config Vars and add the key Port and the value 8000
-6.  Add python and nodejs buildpacks specifically in that order
-7.   In the deploy tab, choose GitHub as deployment method and connect repository
+4. Choose name and region and click create app
+5. In the settings tab, click on Reveal Config Vars and add the key Port and the value 8000
+6. Add python and nodejs buildpacks specifically in that order
+7. In the deploy tab, choose GitHub as deployment method and connect repository
 8. In Manual deploy section, click Deploy Branch
 
+## Local Development
+### How to Fork
+To fork the Tic-Tac-Toe repository:
+1. Log in (or sign up) to Github
+2. Go to the repository for this project
+3. Click the Fork button in the top right corner
 
+### How to Clone
+To clone the Tic-Tac-Toe repository:
+1. Log in (or sign up) to Github
+2. Go to the repository for this project
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI
+4. Copy the link shown
+5. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory
+6. Type 'git clone' into the terminal 
+7. Paste the link you copied in step 3
+8. Press enter
 
 # Testing
 Testing was ongoing throughout the entire build. As this game runs on a mock terminal, it will not work on mobile devices so no accessibility or responsitivity testing was required.
