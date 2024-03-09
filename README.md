@@ -51,3 +51,6 @@ To fully test my game, I performed the following tests:
 | check_winner(player1, player2, player)                               | Player 1 beats Player 2<br>Player 2 beats Player 1<br>Tie                     | Print that Player 1 has won<br>Print that Player 2 has won<br>Print that there is a tie                                                                                                                                                                    | Pass      |
 | play_again()                                                         | Enter 5<br>Enter ok<br>Enter .<br>Enter n<br>Enter no<br>Enter y<br>Enter yes | Error message, ask user to try again<br>Error message, ask user to try again<br>Error message, ask user to try again<br>Thank user for playing and exit game<br>Thank user for playing and exit game<br>Restart two player game<br>Restart two player game | Pass      |
 
+# Bugs
+### Known Bugs
+In the 2 player game, the users are asked for their names again when they choose to play again.
