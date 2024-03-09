@@ -1,3 +1,9 @@
+# Tic-Tac-Toe
+Tic Tac Toe is a classic game that is played of a 3x3 grid, where 2 players take turns marking X's and O's. The goal is to get 3 of your marks in a row, either horizontally, vertically, or diagonally.
+
+You can view the live site here - [Tic-Tac-Toe](https://tic-tac-toe--game-104c3ae4c4ea.herokuapp.com/)
+![game.gif](docs/game.gif)
+
 # User Experience (UX)
 ## Target Audience
 * Users that would like to play a game of tic-tac-toe
