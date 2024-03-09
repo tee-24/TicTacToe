@@ -115,7 +115,7 @@ To clone the Tic-Tac-Toe repository:
 Testing was ongoing throughout the entire build. As this game runs on a mock terminal, it will not work on mobile devices so no accessibility or responsitivity testing was required.
 
 ### Code Institute Python Linter
-Validation was done using [CI Python Linter](https://pep8ci.herokuapp.com/) 
+Validation was done using [PEP8](https://pep8ci.herokuapp.com/) 
 
 run.py
 ![run](docs/run.png)
