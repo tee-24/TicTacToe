@@ -1,4 +1,5 @@
 import common_functions
+import emoji
 
 # Global variables
 board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
@@ -135,10 +136,10 @@ def check_winner(player1, player2, player):
                 board[7] == board[8] == board[9]):
         # If Player 1 wins
         if player:
-            print(f'\nCongrats {player1}, you won!')
+            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
             
         else:
-            print(f'\nCongrats {player2}, you won!')
+            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
 
         # Replay
         play_again()
@@ -151,10 +152,10 @@ def check_winner(player1, player2, player):
                 board[3] == board[6] == board[9]):
         # If Player 1 wins
         if player:
-            print(f'\nCongrats {player1}, you won! ')
+            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
             
         else:
-            print(f'\nCongrats {player2}, you won!')
+            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
 
         # Replay
         play_again()
@@ -165,10 +166,10 @@ def check_winner(player1, player2, player):
             board[3] == board[5] == board[7]):
         # If Player 1 wins
         if player:
-            print(f'\nCongrats {player1}, you won!')
+            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
             
         else:
-            print(f'\nCongrats {player2}, you won! ')
+            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
 
        
         # Replay
@@ -191,11 +192,11 @@ def play_again():
         answer = input('Please type Yes or No: ').capitalize()
     # If user chooses yes
     if answer in ['Y', 'Yes']:
-        print("Great, let's play again!")
+        print(emoji.emojize("Great, let's play again! :grinning_face_with_big_eyes:\n"))
         two_player_game()
     # If user chooses no
     else:
-        print('\nThanks for playing!\n')
+        print(emoji.emojize('\nThanks for playing! :waving_hand:\n'))
         exit()
 
 def two_player_game():
