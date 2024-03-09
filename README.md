@@ -1,3 +1,8 @@
+
+
+## Future Implementations
+ I would like to develop this game using Pygame to create a more interactive and user friendly game that is responsive and can be played on various devices.
+
 # Technologies Used
 * Python3 - Delivers the structure and content for the game
 * Git - For version control
@@ -53,7 +58,7 @@ To fully test my game, I performed the following tests:
 
 # Bugs
 ### Known Bugs
-In the 2 player game, the users are asked for their names again when they choose to play again.
+1. In the 2 player game, the users are asked for their names again when they choose to play again.
 
 # Credits
 * Emojis were sourced from [PyPI](https://pypi.org/project/emoji/)
