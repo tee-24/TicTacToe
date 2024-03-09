@@ -1,4 +1,15 @@
 
+# Design
+## Flowchart
+![game.gif](pic link)
+
+## Color Scheme
+* Error messages are printed in red
+* The introduction message is printed in cyan
+* In the single player game, the message is printed in green if the user wins
+* In the single player game, the message is printed in blue if the user loses
+* In the two player game, the message is printed in green when Player 1 or Player 2 wins
+* When there is a tie, the message is printed in yellow
 
 ## Future Implementations
  I would like to develop this game using Pygame to create a more interactive and user friendly game that is responsive and can be played on various devices.
