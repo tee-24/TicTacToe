@@ -4,13 +4,17 @@ import two_player
 import emoji
 from colorama import Fore, Back, Style
 
+
 def run_game():
     # Intro
-    print(Fore.CYAN + emoji.emojize('\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:'))
+    print(
+        Fore.CYAN
+        + emoji.emojize("\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:")
+    )
     print(Style.RESET_ALL)
     # Instructions
-    print(Fore.YELLOW + 'Instructions:')
-    print('First to get 3 in a row wins!')
+    print(Fore.YELLOW + "Instructions:")
+    print("First to get 3 in a row wins!")
     print(Style.RESET_ALL)
     # Get number of players
     player_number = common_functions.get_num_of_players()
