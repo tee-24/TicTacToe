@@ -3,7 +3,7 @@ import common_functions
 # Global variables
 Board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
 
-ef get_player1_name():
+def get_player1_name():
     """
     Get the name of Player 1
     """
@@ -65,7 +65,7 @@ def get_player1_marker(player1, player2):
 
     return choice
 
-def player1_choice(player1_marker, player1):
+def player1_choice(player1_marker):
     """
     Get Player 1 position 
     and place it on the board
@@ -85,11 +85,11 @@ def player1_choice(player1_marker, player1):
         elif Board[position] in ['X', 'O']:
             print('That spot has been taken, please choose another number')
     # Place marker on the board
-    place_marker(Board, position, player1_marker)
+    place_marker(Board, position, player1_marker, player=True)
 
     return position 
 
-def player2_choice(player2_marker, player2):
+def player2_choice(player2_marker):
 
     position = ''
 
@@ -107,11 +107,11 @@ def player2_choice(player2_marker, player2):
             print('That spot has been taken, please choose another number')
 
     # Place marker on the board
-    place_marker(Board, position, player2_marker)
+    place_marker(Board, position, player2_marker, player=False)
 
     return position 
 
-def place_marker(Board, position, marker):
+def place_marker(Board, position, marker, player=None):
     """
     Place the marker on the board 
     and display the board
@@ -119,3 +119,21 @@ def place_marker(Board, position, marker):
     Board[position] = marker
     common_functions.display_board(Board)
     # Check for winner
+
+def check_winner(player1, player2, player):
+    
+    # Horizontal wins
+    if (
+        board[1] == board[2] == board[3]
+        ) or (
+            board[4] == board[5] == board[6]
+            ) or (
+                board[7] == board[8] == board[9]):
+        # If Player 1 wins
+        if player:
+            print(f'\nCongrats {player1}, you won!')
+            
+        else:
+            print(f'\nCongrats {player2}, you won!')
+
+        # Replay
