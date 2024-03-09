@@ -137,6 +137,7 @@ def check_winner(player1, player2, player):
             print(f'\nCongrats {player2}, you won!')
 
         # Replay
+        play_again()
     # Vertical wins
     elif (
         board[1] == board[4] == board[7]
@@ -152,6 +153,7 @@ def check_winner(player1, player2, player):
             print(f'\nCongrats {player2}, you won!')
 
         # Replay
+        play_again()
     # Diagonal wins
     elif (
         board[1] == board[5] == board[9]
@@ -166,8 +168,28 @@ def check_winner(player1, player2, player):
 
        
         # Replay
+        play_again()
     # Check for tie
     elif common_functions.check_tie(board):
         print("It's a tie!")
         # Replay
+        play_again()
         
+def play_again():
+    """
+    Starts game again if user chooses 'yes'
+    and ends the game if user chooses 'no
+    """
+
+    answer = input('Do you want to play again? ').capitalize()
+    while answer not in ['Y', 'N', 'Yes', 'No']:
+        print("I'm sorry, I don't understand")
+        answer = input('Please type Yes or No: ').capitalize()
+    # If user chooses yes
+    if answer in ['Y', 'Yes']:
+        print("Great, let's play again!")
+        two_player_game()
+    # If user chooses no
+    else:
+        print('\nThanks for playing!\n')
+        exit()
