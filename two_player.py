@@ -3,7 +3,9 @@ import emoji
 from colorama import Fore, Back, Style
 
 # Global variables
-board = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"}
+board = {
+    1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"
+}
 play_game = True
 player1 = ""
 player2 = ""
@@ -18,15 +20,17 @@ def get_player1_name():
     while len(player1) < 3 or not player1.isalpha() or len(player1) > 10:
         player1 = input("Player 1, enter your name: ").capitalize()
 
-        if player1.isalpha() == False:
+        if player1.isalpha() is False:
             print(Fore.RED + "Name can only contain letters, please try again")
             print(Style.RESET_ALL)
         elif len(player1) < 3:
-            print(Fore.RED + "Name must be a minimum of 3 letters, please try again")
+            print(
+                Fore.RED + "Name must be a min of 3 letters, please try again"
+                )
             print(Style.RESET_ALL)
         elif len(player1) > 10:
             print(
-                Fore.RED + "Name can only be a maximum of 10 letters, please try again"
+                Fore.RED + "Name must be a max of 10 letters, please try again"
             )
             print(Style.RESET_ALL)
 
@@ -45,15 +49,17 @@ def get_player2_name():
     while len(player2) < 3 or not player2.isalpha() or len(player2) > 10:
         player2 = input("Player 2, enter your name: ").capitalize()
 
-        if player2.isalpha() == False:
+        if player2.isalpha() is False:
             print(Fore.RED + "Name can only contain letters, please try again")
             print(Style.RESET_ALL)
         elif len(player2) < 3:
-            print(Fore.RED + "Name must be a minimum of 3 letters, please try again")
+            print(
+                Fore.RED + "Name must be a min of 3 letters, please try again"
+                )
             print(Style.RESET_ALL)
         elif len(player2) > 10:
             print(
-                Fore.RED + "Name can only be a maximum of 10 letters, please try again"
+                Fore.RED + "Name must be a max of 10 letters, please try again"
             )
             print(Style.RESET_ALL)
 
@@ -109,10 +115,14 @@ def player1_choice(player1_marker, player1):
             print(Style.RESET_ALL)
 
         elif board[position] in ["X", "O"]:
-            print(Fore.BLUE + "That spot has been taken, please choose another number")
+            print(
+                Fore.BLUE + "That spot is taken, choose another number"
+                )
             print(Style.RESET_ALL)
     # Place marker on the board
-    place_marker(board, position, player1_marker, player1, player2, player=True)
+    place_marker(
+        board, position, player1_marker, player1, player2, player=True
+        )
 
     return position
 
@@ -134,11 +144,13 @@ def player2_choice(player2_marker, player2):
             print(Style.RESET_ALL)
 
         elif board[position] in ["X", "O"]:
-            print(Fore.BLUE + "That spot has been taken, please choose another number")
+            print(Fore.BLUE + "That spot is taken, choose another number")
             print(Style.RESET_ALL)
 
     # Place marker on the board
-    place_marker(board, position, player2_marker, player1, player2, player=False)
+    place_marker(
+        board, position, player2_marker, player1, player2, player=False
+    )
 
     return position
 
@@ -165,15 +177,17 @@ def check_winner(player1, player2, player):
         # If Player 1 wins
         if player:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player1}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player1}, you won! :party_popper:"
+                    )
             )
             print(Style.RESET_ALL)
 
         else:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player2}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player2}, you won! :party_popper:"
+                )
             )
             print(Style.RESET_ALL)
 
@@ -188,34 +202,42 @@ def check_winner(player1, player2, player):
         # If Player 1 wins
         if player:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player1}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player1}, you won! :party_popper:"
+                )
             )
             print(Style.RESET_ALL)
 
         else:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player2}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player2}, you won! :party_popper:"
+                    )
             )
             print(Style.RESET_ALL)
 
         # Replay
         play_again()
     # Diagonal wins
-    elif (board[1] == board[5] == board[9]) or (board[3] == board[5] == board[7]):
+    elif (
+        board[1] == board[5] == board[9]
+        ) or (
+            board[3] == board[5] == board[7]
+            ):
         # If Player 1 wins
         if player:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player1}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player1}, you won! :party_popper:"
+                    )
             )
             print(Style.RESET_ALL)
 
         else:
             print(
-                Fore.GREEN
-                + emoji.emojize(f"\nCongrats {player2}, you won! :party_popper:")
+                Fore.GREEN + emoji.emojize(
+                    f"\nCongrats {player2}, you won! :party_popper:"
+                )
             )
             print(Style.RESET_ALL)
 
@@ -243,12 +265,17 @@ def play_again():
     # If user chooses yes
     if answer in ["Y", "Yes"]:
         print(
-            emoji.emojize("\nGreat, let's play again! :grinning_face_with_big_eyes:\n")
+            emoji.emojize(
+                "\nGreat, let's play again! :grinning_face_with_big_eyes:\n"
+                )
         )
         two_player_game()
     # If user chooses no
     else:
-        print(Fore.CYAN + emoji.emojize("\nThanks for playing! :waving_hand:\n"))
+        print(
+            Fore.CYAN + emoji.emojize(
+                "\nThanks for playing! :waving_hand:\n"
+            ))
         exit()
 
 
