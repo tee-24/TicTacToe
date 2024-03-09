@@ -1,5 +1,6 @@
 import common_functions
 import random
+import emoji
 
 # Global variables
 board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
@@ -104,9 +105,9 @@ def check_winner(player):
                 board[7] == board[8] == board[9]):
         # If user wins
         if player:
-            print('\nCongrats, you won! :party_popper:')
+            print(emoji.emojize('\nCongrats, you won! :party_popper:'))
         else:
-            print('\nOh no! You lost :pensive_face:')
+            print(emoji.emojize('\nOh no! You lost :pensive_face:'))
             print('The computer wins')
         # Replay
         play_again()
@@ -160,11 +161,11 @@ def play_again():
         answer = input('Please type Yes or No: ').capitalize()
     # If user chooses yes
     if answer in ['Y', 'Yes']:
-        print("Great, let's play again!")
+        print(emoji.emojize("Great, let's play again :grinning_face_with_big_eyes:!"))
         one_player_game()
     # If user chooses no
     else:
-        print('\nThanks for playing!\n')
+        print(emoji.emojize('\nThanks for playing! :waving_hand:\n'))
         exit()
 
 def one_player_game():
