@@ -186,7 +186,7 @@ def check_winner(player):
         play_again()
     # Check for tie
     elif common_functions.check_tie(board):
-        print(Fore.YELLOW + "It's a tie!")
+        print(Fore.YELLOW + "\nIt's a tie!")
         print(Style.RESET_ALL)
         # Replay
         play_again()
