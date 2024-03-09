@@ -1,7 +1,7 @@
 
 # Design
 ## Flowchart
-![game.gif](pic link)
+![game.gif](docs/flowchart.png)
 
 ## Color Scheme
 * Error messages are printed in red
@@ -37,16 +37,16 @@ Testing was ongoing throughout the entire build. As this game runs on a mock ter
 Validation was done using [CI Python Linter](https://pep8ci.herokuapp.com/) 
 
 run.py
-![run](assets/docs/run.png)
+![run](docs/run.png)
 
 common_functions.py
-![common](assets/docs/common.png)
+![common](docs/common.png)
 
 one_player.py
-![oneplayer](assets/docs/oneplayer.png)
+![oneplayer](docs/oneplayer.png)
 
 two_player.py
-![twoplayer](assets/docs/twoplayer.png)
+![twoplayer](docs/twoplayer.png)
 
 ### Manual Testing
 To fully test my game, I performed the following tests:
