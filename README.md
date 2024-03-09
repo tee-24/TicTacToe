@@ -62,3 +62,6 @@ In the 2 player game, the users are asked for their names again when they choose
 * Images were compressed by [iLoveIMG](https://www.iloveimg.com/)
 * https://ezgif.com/
 * isalpha() method was learned from [W3 Schools](https://www.w3schools.com/python/ref_string_isalpha.asp#:~:text=The%20isalpha()%20method%20returns,!%23%25%26%3F%20etc.)
+
+# Acknowledgements
+This game was designed and developed in conjunction with the Full Stack Software Developer Diploma course (ecommerce) at the Code Institute. I would like to thank my mentor, Daisy, the Slack community, and Code Institute for all their support.
