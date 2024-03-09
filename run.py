@@ -1,9 +1,10 @@
 import common_functions
 import one_player
+import emoji
 
 def run_game():
     # Intro
-    print('\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:')
+    print(emoji.emojize('\nHello! Welcome to Tic Tac Toe :grinning_face_with_big_eyes:'))
     # Instructions
     print('Instructions:')
     print('First to get 3 in a row wins!')
