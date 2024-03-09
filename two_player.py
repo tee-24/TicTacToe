@@ -152,3 +152,17 @@ def check_winner(player1, player2, player):
             print(f'\nCongrats {player2}, you won!')
 
         # Replay
+    # Diagonal wins
+    elif (
+        board[1] == board[5] == board[9]
+        ) or (
+            board[3] == board[5] == board[7]):
+        # If Player 1 wins
+        if player:
+            print(f'\nCongrats {player1}, you won!')
+            
+        else:
+            print(f'\nCongrats {player2}, you won! ')
+
+       
+        # Replay
