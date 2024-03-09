@@ -54,3 +54,11 @@ To fully test my game, I performed the following tests:
 # Bugs
 ### Known Bugs
 In the 2 player game, the users are asked for their names again when they choose to play again.
+
+# Credits
+* Emojis were sourced from [PyPI](https://pypi.org/project/emoji/)
+* Colorama was learned from [PyPI](https://pypi.org/project/colorama/)
+*  Black was learned from [PyPI](https://pypi.org/project/black/)
+* Images were compressed by [iLoveIMG](https://www.iloveimg.com/)
+* https://ezgif.com/
+* isalpha() method was learned from [W3 Schools](https://www.w3schools.com/python/ref_string_isalpha.asp#:~:text=The%20isalpha()%20method%20returns,!%23%25%26%3F%20etc.)
