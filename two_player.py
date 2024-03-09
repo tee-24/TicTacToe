@@ -1,5 +1,6 @@
 import common_functions
 import emoji
+from colorama import Fore, Back, Style
 
 # Global variables
 board = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9'}
@@ -14,16 +15,20 @@ def get_player1_name():
     player1 = ''
 
     while len(player1) < 3 or not player1.isalpha() or len(player1) > 10:
-        player1 = input('\nPlayer 1, enter your name: ').capitalize()
+        player1 = input('Player 1, enter your name: ').capitalize()
 
         if player1.isalpha() == False:
-            print('Name can only contain letters, please try again')
+            print(Fore.RED + 'Name can only contain letters, please try again')
+            print(Style.RESET_ALL)
         elif len(player1) < 3:
-            print('Name must be a minimum of 3 letters, please try again')
+            print(Fore.RED + 'Name must be a minimum of 3 letters, please try again')
+            print(Style.RESET_ALL)
         elif len(player1) > 10:
-            print('Name can only be a maximum of 10 letters, please try again')
+            print(Fore.RED + 'Name can only be a maximum of 10 letters, please try again')
+            print(Style.RESET_ALL)
 
-    print(f'{player1} is Player 1')
+    print(Fore.YELLOW + f'{player1} is Player 1')
+    print(Style.RESET_ALL)
 
     return player1
 
@@ -34,16 +39,20 @@ def get_player2_name():
     player2 = ''
 
     while len(player2) < 3 or not player2.isalpha() or len(player2) > 10:
-        player2 = input('\nPlayer 2, enter your name: ').capitalize()
+        player2 = input('Player 2, enter your name: ').capitalize()
 
         if player2.isalpha() == False:
-            print('Name can only contain letters, please try again')
+            print(Fore.RED + 'Name can only contain letters, please try again')
+            print(Style.RESET_ALL)
         elif len(player2) < 3:
-            print('Name must be a minimum of 3 letters, please try again')
+            print(Fore.RED + 'Name must be a minimum of 3 letters, please try again')
+            print(Style.RESET_ALL)
         elif len(player2) > 10:
-            print('Name can only be a maximum of 10 letters, please try again')
+            print(Fore.RED + 'Name can only be a maximum of 10 letters, please try again')
+            print(Style.RESET_ALL)
         
-    print(f'{player2} is Player 2')
+    print(Fore.YELLOW + f'{player2} is Player 2')
+    print(Style.RESET_ALL)
 
     return player2
 
@@ -58,14 +67,17 @@ def get_player1_marker(player1, player2):
         choice = input(f'\n{player1}, would you like to be X or O? ').upper()
 
         if choice not in ['X','O']:
-            print('Invalid choice, please choose X or O')
+            print(Fore.RED + 'Invalid choice, please choose X or O')
+            print(Style.RESET_ALL)
 
     if choice == 'X':
-        print(f'{player1} is X')           
+        print(Fore.YELLOW + f'\n{player1} is X')           
         print(f'{player2} is O')
+        print(Style.RESET_ALL)
     else:
-        print(f'{player1} is O')
+        print(Fore.YELLOW + f'\n{player1} is O')
         print(f'{player2} is X')
+        print(Style.RESET_ALL)
 
     return choice
 
@@ -80,14 +92,17 @@ def player1_choice(player1_marker, player1):
         try:
             position = int(input(f'Where would you like to play {player1}? '))
         except ValueError:
-            print('Invalid choice, please choose a number from 1-9')
+            print(Fore.RED + 'Invalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
             continue
 
         if position not in board:
-            print('Invalid choice, please choose a number from 1-9')
+            print(Fore.RED + 'Invalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
 
         elif board[position] in ['X', 'O']:
-            print('That spot has been taken, please choose another number')
+            print(Fore.BLUE + 'That spot has been taken, please choose another number')
+            print(Style.RESET_ALL)
     # Place marker on the board
     place_marker(board, position, player1_marker, player1, player2, player=True)
 
@@ -101,14 +116,17 @@ def player2_choice(player2_marker, player2):
         try:
             position = int(input(f'Where would you like to play {player2}? '))
         except ValueError:
-            print('Invalid choice, please choose a number from 1-9')
+            print(Fore.RED + 'Invalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
             continue
 
         if position not in board:
-            print('Invalid choice, please choose a number from 1-9')
+            print(Fore.RED + 'Invalid choice, please choose a number from 1-9')
+            print(Style.RESET_ALL)
 
         elif board[position] in ['X', 'O']:
-            print('That spot has been taken, please choose another number')
+            print(Fore.BLUE + 'That spot has been taken, please choose another number')
+            print(Style.RESET_ALL)
 
     # Place marker on the board
     place_marker(board, position, player2_marker, player1, player2, player=False)
@@ -136,10 +154,12 @@ def check_winner(player1, player2, player):
                 board[7] == board[8] == board[9]):
         # If Player 1 wins
         if player:
-            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
             
         else:
-            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
 
         # Replay
         play_again()
@@ -152,10 +172,12 @@ def check_winner(player1, player2, player):
                 board[3] == board[6] == board[9]):
         # If Player 1 wins
         if player:
-            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
             
         else:
-            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
 
         # Replay
         play_again()
@@ -166,17 +188,20 @@ def check_winner(player1, player2, player):
             board[3] == board[5] == board[7]):
         # If Player 1 wins
         if player:
-            print(emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player1}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
             
         else:
-            print(emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Fore.GREEN + emoji.emojize(f'\nCongrats {player2}, you won! :party_popper:'))
+            print(Style.RESET_ALL)
 
        
         # Replay
         play_again()
     # Check for tie
     elif common_functions.check_tie(board):
-        print("It's a tie!")
+        print(Fore.YELLOW + "It's a tie!")
+        print(Style.RESET_ALL)
         # Replay
         play_again()
         
@@ -188,19 +213,21 @@ def play_again():
 
     answer = input('Do you want to play again? ').capitalize()
     while answer not in ['Y', 'N', 'Yes', 'No']:
-        print("I'm sorry, I don't understand")
+        print(Fore.RED + "I'm sorry, I don't understand")
+        print(Style.RESET_ALL)
         answer = input('Please type Yes or No: ').capitalize()
     # If user chooses yes
     if answer in ['Y', 'Yes']:
-        print(emoji.emojize("Great, let's play again! :grinning_face_with_big_eyes:\n"))
+        print(emoji.emojize("\nGreat, let's play again! :grinning_face_with_big_eyes:\n"))
         two_player_game()
     # If user chooses no
     else:
-        print(emoji.emojize('\nThanks for playing! :waving_hand:\n'))
+        print(Fore.CYAN + emoji.emojize('\nThanks for playing! :waving_hand:\n'))
         exit()
 
 def two_player_game():
-
+    # Blank line
+    print()
     # Get names of players
     player1 = get_player1_name()
     player2 = get_player2_name()
@@ -223,5 +250,7 @@ def two_player_game():
         print()
         # Where Player 1 wants to play
         player1_choice(player1_marker, player1)
+        # Blank line
+        print()
         # Where Player 2 wants to play
         player2_choice(player2_marker, player2)
